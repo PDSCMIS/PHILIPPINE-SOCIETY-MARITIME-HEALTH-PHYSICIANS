@@ -1,0 +1,251 @@
+@font-face {
+    font-family: "Roboto-Black";
+    src: url(./font/Roboto-Black.ttf);
+}
+
+@font-face {
+    font-family: "Roboto-Bold";
+    src: url(./font/Roboto-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Roboto-Medium";
+    src: url(./font/Roboto-Medium.ttf);
+}
+
+@font-face {
+    font-family: "Roboto-Regular";
+    src: url(./font/Roboto-Regular.ttf);
+}
+
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    width: 100%;
+    height: 100%;
+  
+  
+  --ff-head:"Roboto", sans-serif;
+  --ff-body:"Lato", sans-serif;
+
+  
+    /* CSS HEX */
+    --button: hsl(168, 34%, 30%);
+    --button-hover: #f6ca18;
+    --background: #ffffff;
+    --secondary: #004aad;
+    --primary: #1898c5;
+    --font-black: #03120e;
+    --white: #ffffff;
+    --fonts-nav: #ffffff;
+  
+  --step--2: clamp(0.9549rem, 0.9305rem + 0.1216vw, 1.04rem);
+  --step--1: clamp(1.1458rem, 1.1018rem + 0.2202vw, 1.3rem);
+  --step-0: clamp(1.375rem, 1.3036rem + 0.3571vw, 1.625rem);
+  --step-1: clamp(1.65rem, 1.5411rem + 0.5446vw, 2.0313rem);
+  --step-2: clamp(1.98rem, 1.8203rem + 0.7987vw, 2.5391rem);
+  --step-3: clamp(2.376rem, 2.148rem + 1.1398vw, 3.1738rem);
+  --step-4: clamp(2.8512rem, 2.5323rem + 1.5944vw, 3.9673rem);
+  --step-5: clamp(3.4214rem, 2.9821rem + 2.1967vw, 4.9591rem);
+  
+  
+  }
+  
+  *, *::before, *::after {box-sizing: inherit;}
+  
+  body,h1,h2,h3,h4,h5,h6,p{margin: 0;}
+  
+  
+  h1,h2,h3,h4,h5,h6,a{font-family: var(--ff-head);}
+  p,ul,ol{font-family: var(--ff-body);}
+  
+  body{
+    width: inherit;
+    height: inherit;
+    background-image: url('../img/Background2.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  
+  /* utopia.fyi//type/calculator */
+  /* 320px 22px | 1440px 26px */
+  h1{font-size:var(--step-5);}
+  h2{font-size:var(--step-4);}
+  h3{font-size:var(--step-3);}
+  h4{font-size:var(--step-2);}
+  h5{font-size:var(--step-1);}
+  h6,p,ol,ul,a{font-size: var(--step-0);}
+
+  .bg-primary {
+    --bs-text-opacity: 1;
+    background-color: var(--secondary) !important;
+}
+.bg-secondary {
+    --bs-text-opacity: 1;
+    background-color: var(--primary) !important;
+}
+
+  .text-primary {
+    --bs-text-opacity: 1;
+    color: var(--white) !important;
+}
+  
+.text-secondary {
+    --bs-text-opacity: 1;
+    color: var(--white) !important;
+}
+
+.text-white {
+    --bs-text-opacity: 1;
+    color: var(--white) !important;
+}
+
+.text-nav {
+    --bs-text-opacity: 1;
+    color: var(--button-hover) !important;
+}
+  
+  .text-bg-success {
+    color: #fff !important;
+    background-color: RGBA(var(--bs-success-rgb), var(--bs-bg-opacity, 1)) !important;
+  }
+  
+  .text-bg-info {
+    color: #000 !important;
+    background-color: RGBA(var(--bs-info-rgb), var(--bs-bg-opacity, 1)) !important;
+  }
+  
+  .text-bg-warning {
+    color: #000 !important;
+    background-color: RGBA(var(--bs-warning-rgb), var(--bs-bg-opacity, 1)) !important;
+  }
+  
+  .text-bg-danger {
+    color: #fff !important;
+    background-color: RGBA(var(--bs-danger-rgb), var(--bs-bg-opacity, 1)) !important;
+  }
+  
+  .text-bg-light {
+    color: #000 !important;
+    background-color: RGBA(var(--bs-light-rgb), var(--bs-bg-opacity, 1)) !important;
+  }
+  
+  .text-bg-dark {
+    color: #fff !important;
+    background-color: RGBA(var(--bs-dark-rgb), var(--bs-bg-opacity, 1)) !important;
+  }
+  
+  
+
+/* MASTHEAD */
+.masthead {
+    padding-top: calc(6rem + 74px);
+    padding-bottom: 6rem;
+    background-color: rgba(0, 35, 66, 0.5);
+}
+
+.masthead .masthead-heading {
+    font-size: 2.75rem;
+    line-height: 2.75rem;
+}
+
+.masthead .masthead-subheading {
+    font-size: 1.25rem;
+}
+
+.masthead .masthead-avatar {
+    width: 15rem;
+}
+
+@media (min-width: 992px) {
+    .masthead {
+        padding-top: calc(6rem + 104px);
+        padding-bottom: 6rem;
+    }
+
+    .masthead .masthead-heading {
+        font-size: 4rem;
+        line-height: 3.5rem;
+    }
+
+    .masthead .masthead-subheading {
+        font-size: 1.5rem;
+    }
+}
+
+.masthead {
+    padding-top: calc(6rem + 74px);
+    padding-bottom: 6rem;
+}
+
+.masthead .masthead-heading {
+    font-size: 2.75rem;
+    line-height: 2.75rem;
+}
+
+.masthead .masthead-subheading {
+    font-size: 1.25rem;
+}
+
+.masthead .masthead-avatar {
+    width: 15rem;
+}
+
+@media (min-width: 992px) {
+    .masthead {
+        padding-top: calc(6rem + 104px);
+        padding-bottom: 6rem;
+    }
+
+    .masthead .masthead-heading {
+        font-size: 4rem;
+        line-height: 3.5rem;
+    }
+
+    .masthead .masthead-subheading {
+        font-size: 1.5rem;
+    }
+}
+
+/* Card*/
+.card {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../img/card_bg.jpg'); /* Background image path */
+    background-size: cover; /* Cover the entire card */
+    background-position: center; /* Center the image */
+    z-index: 0; /* Ensure background is behind content */
+}
+
+.card-body {
+    position: relative;
+    z-index: 1; /* Bring content above the background */
+}
+
+/* Floating Button*/
+.btn-floating {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary);
+    transition: background-color 0.3s ease;
+}
+
+.btn-floating:hover {
+    background-color: var(--primary); /* Change color on hover */
+}
