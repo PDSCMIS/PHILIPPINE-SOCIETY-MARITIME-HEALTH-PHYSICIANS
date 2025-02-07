@@ -9,6 +9,22 @@
 
     <link href="./css/bootstrap.css" rel="stylesheet">
     <link href="./css/style.css" rel="stylesheet">
+
+    <style>
+      .main-hover-container:hover .img {
+        filter: blur(5px);
+        transition: filter 0.5s ease;
+      }
+      
+      .hover-content {
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+      
+      .main-hover-container:hover .hover-content {
+        opacity: 1;
+      }
+    </style>
 </head>
 <body>
 
@@ -42,39 +58,50 @@
 
     </div>
 
-<!-- Main Section with Background Image and Button -->
-<div style="height: 400px; background-color: lightgray; position: relative;">
-  <!-- First Image (Background Image) -->
-  <img src="./img/3.png" class="img" style="height: 100%; width: 100%; object-fit: cover;">
+<!-- Main Section with Hover Effects -->
+<div class="main-hover-container" style="height: 400px; background-color: rgb(55, 94, 156); position: relative; overflow: hidden;">
+  <!-- Image with Blur Effect -->
+  <img src="./img/companypic2.png" class="img mx-auto d-block" style="height: 100%; width: 45%; object-fit: cover;">
 
-  <!-- Row for Two Columns -->
-  <div class="container" style="position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 80%; display: flex; justify-content: flex-start; gap: 20px;">
-    <!-- Column 1 -->
+  <!-- Content Container -->
+  <div class="container hover-content" style="position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 80%; display: flex; justify-content: flex-start; gap: 20px;">
+    <!-- Content Column -->
     <div style="width: 48%; padding: 20px; border-radius: 8px; background-color: rgba(0, 0, 0, 0.5);">
       <h3 class="text-white">Maritime Health Experts Collaborate...</h3>
       <!-- See More Button -->
-      <button class="btn" style="margin-top: 15px; background-color: transparent; border: 2px solid white; color: white; padding: 10px 20px; font-size: 16px; border-radius: 5px; text-transform: uppercase; cursor: pointer; transition: background-color 0.3s, color 0.3s;" data-toggle="modal" data-target="#exampleModal">
+      <button class="btn" style="margin-top: 15px; background-color: transparent; border: 2px solid white; color: white; padding: 10px 20px; font-size: 16px; border-radius: 5px; text-transform: uppercase; cursor: pointer; transition: background-color 0.3s, color 0.3s;" 
+              data-toggle="modal" 
+              data-target="#exampleModal"
+              onmouseover="this.style.backgroundColor='white'; this.style.color='black'"
+              onmouseout="this.style.backgroundColor='transparent'; this.style.color='white'">
         See More
       </button>
+      
+       <!-- HarborScope and Issue Details (Responsive) -->
+      <div style="margin-top: 10px; color: white;  display: flex; flex-wrap: wrap;">
+    
+        <span style="color: yellow; min-width: 200px; max-width: 100%; text-align: left;">
+          <p class = "fw-bold fs-3">HarborScope</p> <p class = "fs-5">October * December 2024 * ISSN 209405639 * VOL. 13 NO. 4 </p>
+        </span>
+      </div>
+
     </div>
   </div>
 </div>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Event Details</h5>
-        </button>
+        <img src="./img/modal1.png" class="img-fluid mx-auto d-block rounded" style="height: 50%; width: 100%; object-fit: cover;">
       </div>
       <div class="modal-body">
         <h4>Maritime Health Experts Collaborate for Seafarers' Safety and Well-being</h4>
         <p>Seventeen esteemed Maritime professionals and Health medical experts united with a shared vision, leading to the establishment of the Philippine of Maritime Society Health Physicians (PSMHP). These experts have various accreditations such as the NIS, UK-MCA, DIS, Panama, Liberia, and P&l clubs, while some of them also have a Master's Degree in Maritime Health. They have played a crucial role in ensuring the deployment of healthy and seaworthy seafarers, a cornerstone in maintaining the Philippines' position as the global hub for maritime personnel.</p>
         <p>The society also encompasses professionals involved in the comprehensive care of post- medical and repatriation cases. "It's a holistic organization," remarked Dr. Clarissa Mendoza, President of both the society and MARCDOC, during a recent meeting. "It covers the entirety of a seafarer's career journey, from pre-employment assessments to onboard consultations employment telemedical and post evaluations, including medical repatriation services."</p>
-        <p>Dr. Jeriberto De Guzman, President of AMECO, and Drs. Marcel Alcaraz, Joseph Bien Abesamis and Paul Teves, members of the board, echoed her sentiments. Mendoza emphasized PSMHP's vision to emerge as the preeminent group of experts dedicated to enhancing Maritime Health and safety in the West Pacific. The organization reflects the Philippines' commitment to complying with the ILO Convention, ensuring that medical professionals responsible for declaring seafarers fit are well- versed in the demands of life at sea and the requisite health and safety standards.</p>
-        <p>"We are enthusiastic about the wealth of knowledge and experience these doctors bring to the organization, anticipating a positive impact on the nation's maritime sector," the doctors concluded.
-        </p>
+        <p>Dr. Jeriberto De Guzman, President of AMECO, and Drs. Marcel Alcaraz, Joseph Bien Abesamis and Paul Teves, members of the board, echoed her sentiments. Mendoza emphasized PSMHP's vision to emerge as the preeminent group of experts dedicated to enhancing Maritime Health and safety in the West Pacific. The organization reflects the Philippines' commitment to complying with the ILO Convention, ensuring that medical professionals responsible for declaring seafarers fit are well-versed in the demands of life at sea and the requisite health and safety standards.</p>
+        <p>"We are enthusiastic about the wealth of knowledge and experience these doctors bring to the organization, anticipating a positive impact on the nation's maritime sector," the doctors concluded.</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -83,72 +110,45 @@
   </div>
 </div>
 
-<!-- Bootstrap JS and jQuery (Required for Modal to work) -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    
     
 <!-- Upcoming Events Section -->
 <section class="py-5 bg-light">
   <div class="container text-center">
     <h2 class="display-4 mb-4">Upcoming Events</h2>
+    <hr>
     <p class="lead text-muted mb-5">Join us for these exciting upcoming events! Stay informed and be part of the action.</p>
 
     <div class="row mt-4">
       <!-- Event 1 -->
       <div class="col-12 col-md-4 mb-4">
-        <div class="card shadow-sm border-0">
+        <div class="card shadow border-0">
           <div class="card-body">
-            <h4 class="card-title h5 text-dark">Event 1</h4>
-            <p class="card-text text-muted">February 15, 2025</p>
-            <p class="card-text text-muted">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti, ullam.</p>
-            <a href="#" class="btn btn-primary mt-3">Learn More</a>
+            <h4 class="card-title h5 text-dark">February 20, 2025</h4>
+            <p class="card-text text-muted fw-bold">CHARTING A NEW COURSE</p>
+            <p class="card-text text-muted fs-6">INAUGURAL CONVENTION PHILIPPINE SOCIETY OF MARITIME HEALTH PHYSICIANS</p>
+            <a href="#" class="btn btn-primary mt-3">Register now</a>
           </div>
         </div>
       </div>
 
-      <!-- Event 2 -->
-      <div class="col-12 col-md-4 mb-4">
-        <div class="card shadow-sm border-0">
-          <div class="card-body">
-            <h4 class="card-title h5 text-dark">Event 2</h4>
-            <p class="card-text text-muted">March 5, 2025</p>
-            <p class="card-text text-muted">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti, ullam.</p>
-            <a href="#" class="btn btn-primary mt-3">Learn More</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Event 3 -->
-      <div class="col-12 col-md-4 mb-4">
-        <div class="card shadow-sm border-0">
-          <div class="card-body">
-            <h4 class="card-title h5 text-dark">Event 3</h4>
-            <p class="card-text text-muted">April 12, 2025</p>
-            <p class="card-text text-muted">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti, ullam.</p>
-            <a href="#" class="btn btn-primary mt-3">Learn More</a>
-          </div>
-        </div>
-      </div>
+<!-- Event 2 -->
+<div class="col-12 col-md-4 mb-4">
+  <div class="card shadow border-0 h-100">
+    <div class="card-body d-flex flex-column justify-content-center text-center">
+      <h4 class="card-title h5 text-dark">TO BE ANNOUNCED</h4>
     </div>
   </div>
+</div>
+
+<!-- Event 3 -->
+<div class="col-12 col-md-4 mb-4">
+  <div class="card shadow border-0 h-100">
+    <div class="card-body d-flex flex-column justify-content-center text-center">
+      <h4 class="card-title h5 text-dark">TO BE ANNOUNCED</h4>
+    </div>
+  </div>
+</div>
 </section>
-
-
-
-
-    
-    
-    
-    
-  
-  
-  
-  
-  
-
-
 
 
     <!-- Contact Us Section -->
@@ -208,6 +208,9 @@
       </div>
     </footer>
 
-      <script src="./js/bootstrap.bundle.js"></script>
+    <!-- Bootstrap JS and jQuery (Required for Modal to work) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>  
+<script src="./js/bootstrap.bundle.js"></script>
 </body>
 </html>
