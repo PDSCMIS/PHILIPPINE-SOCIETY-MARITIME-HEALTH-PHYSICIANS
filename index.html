@@ -87,14 +87,14 @@
 <!-- MasterHead -->
 <div class="container-fluid px-0">
   <div class="image-wrapper">
-    <img class="img-fluid w-100 hover-blur" src="../img/Banner1.png" alt="Banner">
+    <img class="img-fluid w-100 hover-blur" src="./img/Banner1.png" alt="Banner">
     <div class="hover-text fs-1 bg-black bg-opacity-50 text-white p-5 position-absolute top-50 start-50 translate-middle rounded-3">WELCOME TO PSMHP</div>
   </div>
 </div>
 
 
 
-<!-- Modal -->
+<!-- Modal Maritime Health Experts Collaborate for Seafarers' Safety and Well-being-->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
@@ -115,6 +115,97 @@
   </div>
 </div>
 
+<!-- Modal 2 OATH TAKING PSMHP OFFICERS & MEMBERS OF THE BOARD -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModal2Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <img src="./img/OriginalBG2.png" class="img-fluid mx-auto d-block rounded" style="height: 50%; width: 100%; object-fit: cover;">
+      </div>
+      <div class="modal-body text-center">
+        <h4>Oath Taking PSMHP Officers & Members of the Board</h4>
+
+        <!-- Sponsors Section -->
+        <h5 class="mt-4">Sponsors</h5>
+        <div class="d-flex justify-content-center flex-wrap gap-3">
+          <script>
+            for (let i = 1; i <= 19; i++) {
+              document.write(`
+                <img src="./img/sponsor${i}.png" class="img-fluid rounded m-2" style="max-width: 180px; cursor:pointer;" onclick="openModal(${i}, 'sponsor')">
+              `);
+            }
+          </script>
+        </div>
+
+        <!-- Images Section -->
+        <h5 class="mt-4">Event Images</h5>
+        <div class="d-flex justify-content-center flex-wrap gap-3">
+          <script>
+            for (let i = 1; i <= 22; i++) {
+              document.write(`
+                <img src="./img/gallery${i}.png" class="img-thumbnail m-2" style="max-width: 180px; cursor:pointer;" onclick="openModal(${i}, 'gallery')">
+              `);
+            }
+          </script>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Universal Image Modal -->
+<div class="modal fade" id="imageModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body position-relative text-center">
+        <!-- Left Button -->
+        <button class="btn position-absolute" 
+                style="top: 50%; left: 5%; transform: translateY(-50%); background: transparent; border: none; color: white; font-size: 2rem;" 
+                onclick="changeImage(-1)">
+          &#9664;
+        </button>
+
+        <!-- Image -->
+        <img id="modalImage" class="img-fluid rounded w-100" style="max-height: 90vh; object-fit: contain;">
+
+        <!-- Right Button -->
+        <button class="btn position-absolute" 
+                style="top: 50%; right: 5%; transform: translateY(-50%); background: transparent; border: none; color: white; font-size: 2rem;" 
+                onclick="changeImage(1)">
+          &#9654;
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript for Image Modal Navigation -->
+<script>
+  let currentIndex = 0;
+  let currentType = '';
+  const sponsorCount = 19;
+  const galleryCount = 22;
+
+  function openModal(index, type) {
+    currentIndex = index;
+    currentType = type;
+    document.getElementById('modalImage').src = `./img/${type}${index}.png`;
+    $('#imageModal').modal('show');
+  }
+
+  function changeImage(direction) {
+    let maxIndex = currentType === 'sponsor' ? sponsorCount : galleryCount;
+    currentIndex += direction;
+    if (currentIndex < 1) currentIndex = maxIndex;
+    if (currentIndex > maxIndex) currentIndex = 1;
+    document.getElementById('modalImage').src = `./img/${currentType}${currentIndex}.png`;
+  }
+</script>
+
 <!-- EVENTS -->
 <section class="py-5 bg-light">
   <div class="container text-center">
@@ -133,16 +224,34 @@
 </div> 
 
 <!-- Event 2 -->
-<div class="card text-center col-12 col-md-4 mb-4 shadow border-0 h-100">
-  <div class="card-header">
-    <img src="./img/OriginalBG.jpg" class="card-img-top">
+<div class="d-flex justify-content-center flex-wrap gap-4">
+  <div class="card text-center col-12 col-md-4 mb-4 shadow border-0 h-100">
+    <div class="card-header">
+      <img src="./img/OriginalBG.jpg" class="card-img-top">
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Maritime Health Experts Collaborate for Seafarers' Safety and Well-being</h5>
+      <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">See more</a>
+    </div>
+    <div class="card-footer text-body-secondary text-primary">
+      HarborScope October * December 2024 * ISSN 209405639 * VOL. 13 NO. 4
+    </div>
   </div>
-  <div class="card-body">
-    <h5 class="card-title">Maritime Health Experts Collaborate for Seafarers' Safety and Well-being</h5>
-    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">See more</a>
-  </div>
-  <div class="card-footer text-body-secondary text-primary">
-    HarborScope October * December 2024 * ISSN 209405639 * VOL. 13 NO. 4
+
+  <!-- Column 2 Event 3 -->
+  <div class="card text-center col-12 col-md-4 mb-4 shadow border-0 h-100">
+    <div class="card-header">
+      <img src="./img/OriginalBG2.png" class="card-img-top">
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Oath Taking PSMHP Officers & Members of the Board 
+      </h5> 
+      <br>
+      <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">See more</a>
+    </div>
+    <div class="card-footer text-body-secondary text-primary">
+      Lanson Place Mall of Asia, Manila * February 20, 2025 
+    </div>
   </div>
 </div>
 
